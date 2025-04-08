@@ -85,7 +85,7 @@ public class HttpProfile {
     public HttpProfile() {
         this.reqMethod = HttpProfile.REQ_POST;
         this.endpoint = null;
-        this.rootDomain = "tencentcloudapi.com";
+        this.rootDomain = "yanzhenyidai.top";
         this.protocol = HttpProfile.REQ_HTTPS;
         this.readTimeout = 0;
         this.writeTimeout = 0;
@@ -97,11 +97,6 @@ public class HttpProfile {
         return this.reqMethod;
     }
 
-    /**
-     * Set request method, GET or POST.
-     *
-     * @param reqMethod
-     */
     public void setReqMethod(String reqMethod) {
         this.reqMethod = reqMethod;
     }
@@ -110,17 +105,6 @@ public class HttpProfile {
         return this.endpoint;
     }
 
-    /**
-     * Set the endpoint.
-     *
-     * <p>Endpoint means the domain which this request is sent to, such as
-     * [productName].tencentcloudapi.com.
-     *
-     * <p>If you want to request to a specified region, such as Guangzhou, set it to
-     * [productName].ap-guangzhou.tencentcloudapi.com.
-     *
-     * @param endpoint
-     */
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
@@ -129,11 +113,6 @@ public class HttpProfile {
         return this.readTimeout;
     }
 
-    /**
-     * Set read timeout value.
-     *
-     * @param readTimeout A integer represents time in seconds.
-     */
     public void setReadTimeout(int readTimeout) {
         this.readTimeout = readTimeout;
     }
@@ -142,11 +121,6 @@ public class HttpProfile {
         return this.writeTimeout;
     }
 
-    /**
-     * Set write timeout value.
-     *
-     * @param writeTimeout A integer represents time in seconds.
-     */
     public void setWriteTimeout(int writeTimeout) {
         this.writeTimeout = writeTimeout;
     }
@@ -155,11 +129,6 @@ public class HttpProfile {
         return this.connTimeout;
     }
 
-    /**
-     * Set connect timeout value.
-     *
-     * @param connTimeout A integer represents time in seconds.
-     */
     public void setConnTimeout(int connTimeout) {
         this.connTimeout = connTimeout;
     }
@@ -168,11 +137,6 @@ public class HttpProfile {
         return this.protocol;
     }
 
-    /**
-     * Set request protocol.
-     *
-     * @param protocol https:// or http://
-     */
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
