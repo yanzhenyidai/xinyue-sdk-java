@@ -1,7 +1,6 @@
 package cn.xinyue365.ocr.v20250408.models;
 
 import cn.xinyue365.common.AbstractResponse;
-import com.google.gson.Gson;
 
 /**
  * @author frank

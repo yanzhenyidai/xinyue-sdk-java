@@ -18,6 +18,6 @@ public class OcrClient extends AbstractClient {
     }
 
     public OcrResponse ocr(OcrRequest request) {
-        return call("/ocr", request, OcrResponse.class);
+        return this.call("ocr/multipart", request, OcrResponse.class);
     }
 }
