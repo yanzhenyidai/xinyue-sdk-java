@@ -6,7 +6,6 @@ import java.util.Base64;
 
 /**
  * @author frank
- * @version 1.0
  */
 public class Sign {
 

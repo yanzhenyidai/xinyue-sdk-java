@@ -5,11 +5,9 @@ import cn.xinyue365.common.Credential;
 import cn.xinyue365.common.profile.HttpProfile;
 import cn.xinyue365.verify.v20250408.models.VerifyRequest;
 import cn.xinyue365.verify.v20250408.models.VerifyResponse;
-import com.google.gson.JsonObject;
 
 /**
  * @author frank
- * @version 1.0
  */
 public class VerifyClient extends AbstractClient {
 

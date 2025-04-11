@@ -2,7 +2,6 @@ package cn.xinyue365.common.exception;
 
 /**
  * @author frank
- * @version 1.0
  */
 public class SDKException extends RuntimeException {
 

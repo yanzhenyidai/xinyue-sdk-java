@@ -1,6 +1,5 @@
 package cn.xinyue365.common;
 
-import cn.xinyue365.common.exception.SDKException;
 import cn.xinyue365.common.http.HttpUtil;
 import cn.xinyue365.common.profile.HttpProfile;
 import com.google.gson.Gson;
@@ -11,7 +10,6 @@ import java.time.Instant;
 
 /**
  * @author frank
- * @version 1.0
  */
 public abstract class AbstractClient {
 
@@ -35,7 +33,7 @@ public abstract class AbstractClient {
             httpProfile.getWriteTimeout());
     }
 
-    protected <T extends AbstractModel> T call(String action, AbstractModel request, Class<T> responseClass) {
+    protected <T extends AbstractResponse<?>> T call(String action, AbstractRequest request, Class<T> responseClass) {
         try {
             String timestamp = String.valueOf(Instant.now().getEpochSecond());
             String payload = request.toJson();
@@ -51,7 +49,7 @@ public abstract class AbstractClient {
             String responseStr = this.httpConnection.postRequest(endpoint + action, payload, headerBuilder.build());
             return new Gson().fromJson(responseStr, responseClass);
         } catch (IOException e) {
-            throw new SDKException("Request failed", e);
+            return ResponseFactory.failure(responseClass, e);
         }
     }
 }

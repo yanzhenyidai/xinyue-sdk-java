@@ -1,7 +1,6 @@
 package cn.xinyue365.verify.v20250408.models;
 
-import cn.xinyue365.common.AbstractModel;
-import com.google.gson.Gson;
+import cn.xinyue365.common.AbstractResponse;
 import lombok.*;
 
 import java.io.Serializable;
@@ -9,16 +8,10 @@ import java.util.List;
 
 /**
  * @author frank
- * @version 1.0
- * @date 2025-04-11 14:17
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class VerifyResponse extends AbstractModel {
-
-    private String msg;
-    private Integer result;
-    private Invoice invoice;
+public class VerifyResponse extends AbstractResponse<VerifyResponse.Invoice> {
 
     @AllArgsConstructor
     @NoArgsConstructor
@@ -75,10 +68,5 @@ public class VerifyResponse extends AbstractModel {
         private String detailNo;
         private String taxUnitPrice;
         private String taxDetailAmount;
-    }
-
-    @Override
-    public String toJson() {
-        return new Gson().toJson(this);
     }
 }

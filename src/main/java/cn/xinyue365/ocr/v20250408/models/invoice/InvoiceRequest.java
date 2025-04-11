@@ -1,6 +1,6 @@
 package cn.xinyue365.ocr.v20250408.models.invoice;
 
-import cn.xinyue365.common.AbstractModel;
+import cn.xinyue365.common.AbstractRequest;
 import com.google.gson.Gson;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -9,11 +9,10 @@ import lombok.EqualsAndHashCode;
  * 发票识别
  *
  * @author frank
- * @version 1.0
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class InvoiceRequest extends AbstractModel {
+public class InvoiceRequest extends AbstractRequest {
 
     /**
      * 请求类型：1、在线文件，2、Base64文件

@@ -1,6 +1,6 @@
 package cn.xinyue365.verify.v20250408.models;
 
-import cn.xinyue365.common.AbstractModel;
+import cn.xinyue365.common.AbstractRequest;
 import com.google.gson.Gson;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -9,11 +9,10 @@ import java.io.Serializable;
 
 /**
  * @author frank
- * @version 1.0
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class VerifyRequest extends AbstractModel implements Serializable {
+public class VerifyRequest extends AbstractRequest implements Serializable {
 
     /**
      * 发票代码

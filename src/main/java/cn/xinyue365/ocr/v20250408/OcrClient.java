@@ -10,7 +10,6 @@ import cn.xinyue365.ocr.v20250408.models.text.TextResponse;
 
 /**
  * @author frank
- * @version 1.0
  */
 public class OcrClient extends AbstractClient {
 

@@ -1,9 +1,6 @@
 package cn.xinyue365.common;
 
-import jdk.nashorn.internal.objects.annotations.Constructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.Serializable;
 
