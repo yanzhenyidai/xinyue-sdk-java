@@ -3,7 +3,6 @@ package cn.xinyue365.common.exception;
 /**
  * @author frank
  * @version 1.0
- * @date 2025-04-08 14:08
  */
 public class SDKException extends RuntimeException {
 

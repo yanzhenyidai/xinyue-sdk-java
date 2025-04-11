@@ -30,7 +30,7 @@ public class HttpUtil {
                 if (!response.isSuccessful()) {
                     throw new IOException("HTTP error: " + response.code());
                 }
-                return this.client.newCall(request).execute().body().string();
+                return response.body().string();
             } catch (IOException e) {
                 lastException = e;
                 logger.error("Request attempt " + (i + 1) + " failed: " + e.getMessage());

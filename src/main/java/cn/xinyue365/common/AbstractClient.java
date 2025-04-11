@@ -12,7 +12,6 @@ import java.time.Instant;
 /**
  * @author frank
  * @version 1.0
- * @date 2025-04-08 14:19
  */
 public abstract class AbstractClient {
 
@@ -36,7 +35,7 @@ public abstract class AbstractClient {
             httpProfile.getWriteTimeout());
     }
 
-    protected <T> T call(String action, AbstractRequest request, Class<T> responseClass) {
+    protected <T extends AbstractModel> T call(String action, AbstractModel request, Class<T> responseClass) {
         try {
             String timestamp = String.valueOf(Instant.now().getEpochSecond());
             String payload = request.toJson();
@@ -49,7 +48,7 @@ public abstract class AbstractClient {
                 .add("X-Timestamp", timestamp)
                 .add("X-Secret-Id", credential.getSecretId());
 
-            String responseStr = this.httpConnection.postRequest(endpoint + "/" + action, payload, headerBuilder.build());
+            String responseStr = this.httpConnection.postRequest(endpoint + action, payload, headerBuilder.build());
             return new Gson().fromJson(responseStr, responseClass);
         } catch (IOException e) {
             throw new SDKException("Request failed", e);

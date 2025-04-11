@@ -1,16 +1,19 @@
 package cn.xinyue365.verify.v20250408.models;
 
-import cn.xinyue365.common.AbstractRequest;
+import cn.xinyue365.common.AbstractModel;
 import com.google.gson.Gson;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 
 /**
  * @author frank
  * @version 1.0
- * @date 2025-04-08 14:19
  */
-public class VerifyRequest extends AbstractRequest implements Serializable {
+@EqualsAndHashCode(callSuper = true)
+@Data
+public class VerifyRequest extends AbstractModel implements Serializable {
 
     /**
      * 发票代码
@@ -51,70 +54,6 @@ public class VerifyRequest extends AbstractRequest implements Serializable {
      * 销售方税号
      */
     private String vendorTaxCode;
-
-    public String getInvoiceCode() {
-        return invoiceCode;
-    }
-
-    public void setInvoiceCode(String invoiceCode) {
-        this.invoiceCode = invoiceCode;
-    }
-
-    public String getInvoiceNum() {
-        return invoiceNum;
-    }
-
-    public void setInvoiceNum(String invoiceNum) {
-        this.invoiceNum = invoiceNum;
-    }
-
-    public String getInvoiceDate() {
-        return invoiceDate;
-    }
-
-    public void setInvoiceDate(String invoiceDate) {
-        this.invoiceDate = invoiceDate;
-    }
-
-    public String getAmountTotal() {
-        return amountTotal;
-    }
-
-    public void setAmountTotal(String amountTotal) {
-        this.amountTotal = amountTotal;
-    }
-
-    public String getCheckCode() {
-        return checkCode;
-    }
-
-    public void setCheckCode(String checkCode) {
-        this.checkCode = checkCode;
-    }
-
-    public String getTax() {
-        return tax;
-    }
-
-    public void setTax(String tax) {
-        this.tax = tax;
-    }
-
-    public String getTaxAmount() {
-        return taxAmount;
-    }
-
-    public void setTaxAmount(String taxAmount) {
-        this.taxAmount = taxAmount;
-    }
-
-    public String getVendorTaxCode() {
-        return vendorTaxCode;
-    }
-
-    public void setVendorTaxCode(String vendorTaxCode) {
-        this.vendorTaxCode = vendorTaxCode;
-    }
 
     @Override
     public String toJson() {
