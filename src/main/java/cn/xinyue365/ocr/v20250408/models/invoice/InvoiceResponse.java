@@ -1,6 +1,7 @@
 package cn.xinyue365.ocr.v20250408.models.invoice;
 
 import cn.xinyue365.common.AbstractResponse;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,10 +12,12 @@ import java.util.List;
 /**
  * @author frank
  */
+@Builder
 public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>> {
 
     @Setter
     @Getter
+    @Builder
     public static class Data implements Serializable {
         private String index;
         private String type;
@@ -39,6 +42,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 发票
     @Setter
     @Getter
+    @Builder
     public static class VatInvoice implements Serializable {
         private String code;
         private String number;
@@ -76,6 +80,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 机票
     @Setter
     @Getter
+    @Builder
     public static class AirInvoice implements Serializable {
         private String userName;
         private String userId;
@@ -100,6 +105,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 火车票
     @Setter
     @Getter
+    @Builder
     public static class TrainInvoice implements Serializable {
         private String number;
         private String date;
@@ -119,6 +125,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 机打发票
     @Setter
     @Getter
+    @Builder
     public static class HandwrittenInvoice implements Serializable {
         private String code;
         private String number;
@@ -140,6 +147,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 卷票
     @Setter
     @Getter
+    @Builder
     public static class CouponInvoice implements Serializable {
         private String code;
         private String number;
@@ -162,6 +170,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 出租车
     @Setter
     @Getter
+    @Builder
     public static class TaxiInvoice implements Serializable {
         private String code;
         private String number;
@@ -180,6 +189,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 定额发票
     @Setter
     @Getter
+    @Builder
     public static class QuotaInvoice implements Serializable {
         private String code;
         private String number;
@@ -193,6 +203,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 过路费
     @Setter
     @Getter
+    @Builder
     public static class RoadTaxInvoice implements Serializable {
         private String code;
         private String number;
@@ -208,6 +219,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 客运汽车
     @Setter
     @Getter
+    @Builder
     public static class PassengerCarInvoice implements Serializable {
         private String code;
         private String number;
@@ -224,6 +236,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 二手车发票
     @Setter
     @Getter
+    @Builder
     public static class UsedCarInvoice implements Serializable {
         private String code;
         private String number;
@@ -247,6 +260,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 机动车销售统一发票
     @Setter
     @Getter
+    @Builder
     public static class MotorVehicleInvoice implements Serializable {
         private String code;
         private String number;
@@ -275,6 +289,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 小票
     @Setter
     @Getter
+    @Builder
     public static class ReceiptInvoice implements Serializable {
         private String storeName;
         private String date;
@@ -291,6 +306,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 滴滴出行行程单
     @Setter
     @Getter
+    @Builder
     public static class TripInvoice implements Serializable {
         private String date;
         private String dateStart;
@@ -302,6 +318,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 完税证明
     @Setter
     @Getter
+    @Builder
     public static class TaxProofInvoice implements Serializable {
         private String number;
         private String total;
@@ -313,6 +330,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
     // 船票
     @Setter
     @Getter
+    @Builder
     public static class ShipInvoice implements Serializable {
         private String code;
         private String number;
@@ -330,6 +348,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
 
     @Setter
     @Getter
+    @Builder
     public static class Item implements Serializable {
         // 发票
         private String name;
@@ -352,6 +371,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
 
     @Setter
     @Getter
+    @Builder
     public static class Flight implements Serializable {
         private String from;
         private String to;

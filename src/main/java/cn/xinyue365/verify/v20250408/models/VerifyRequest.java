@@ -2,6 +2,7 @@ package cn.xinyue365.verify.v20250408.models;
 
 import cn.xinyue365.common.AbstractRequest;
 import com.google.gson.Gson;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,6 +13,7 @@ import java.io.Serializable;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Builder
 public class VerifyRequest extends AbstractRequest implements Serializable {
 
     /**

@@ -69,7 +69,7 @@ public class HttpUtil {
         MediaType contentType = MediaType.parse("application/x-www-form-urlencoded");
         Request request = null;
         try {
-            request = new Request.Builder().url(url).post(RequestBody.create(contentType, body)).build();
+            request = new Request.Builder().url(url).post(RequestBody.create(body, contentType)).build();
         } catch (IllegalArgumentException e) {
             throw new SDKException(e.getClass().getName() + "-" + e.getMessage());
         }
@@ -80,12 +80,12 @@ public class HttpUtil {
     public String postRequest(String url, String body, Headers headers)
         throws SDKException, IOException {
         MediaType contentType = MediaType.parse(headers.get("Content-Type"));
-        Request request = null;
+        Request request;
         try {
             request =
                 new Request.Builder()
                     .url(url)
-                    .post(RequestBody.create(contentType, body))
+                    .post(RequestBody.create(body, contentType))
                     .headers(headers)
                     .build();
         } catch (IllegalArgumentException e) {
@@ -103,7 +103,7 @@ public class HttpUtil {
             request =
                 new Request.Builder()
                     .url(url)
-                    .post(RequestBody.create(contentType, body))
+                    .post(RequestBody.create(body, contentType))
                     .headers(headers)
                     .build();
         } catch (IllegalArgumentException e) {

@@ -2,6 +2,7 @@ package cn.xinyue365.ocr.v20250408.models.text;
 
 import cn.xinyue365.common.AbstractRequest;
 import com.google.gson.Gson;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,6 +13,7 @@ import java.util.List;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Builder
 public class TextRequest extends AbstractRequest {
 
     /**

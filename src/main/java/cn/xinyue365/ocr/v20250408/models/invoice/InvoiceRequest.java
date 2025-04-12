@@ -2,6 +2,7 @@ package cn.xinyue365.ocr.v20250408.models.invoice;
 
 import cn.xinyue365.common.AbstractRequest;
 import com.google.gson.Gson;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,6 +13,7 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Builder
 public class InvoiceRequest extends AbstractRequest {
 
     /**
