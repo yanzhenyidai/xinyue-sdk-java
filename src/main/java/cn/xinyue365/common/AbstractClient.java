@@ -1,6 +1,6 @@
 package cn.xinyue365.common;
 
-import cn.xinyue365.common.http.HttpUtil;
+import cn.xinyue365.common.http.HttpConnection;
 import cn.xinyue365.common.profile.HttpProfile;
 import com.google.gson.Gson;
 import okhttp3.Headers;
@@ -17,7 +17,7 @@ public abstract class AbstractClient {
 
     protected final Credential credential;
     protected final String endpoint;
-    private HttpUtil httpConnection;
+    private HttpConnection httpConnection;
 
     protected AbstractClient(Credential credential, String endpoint) {
         this.credential = credential;
@@ -27,17 +27,17 @@ public abstract class AbstractClient {
     public AbstractClient(Credential credential, HttpProfile httpProfile, String endpoint) {
         this.credential = credential;
         this.endpoint = endpoint;
-        this.httpConnection = new HttpUtil(
+        this.httpConnection = new HttpConnection(
             httpProfile.getConnTimeout(),
             httpProfile.getReadTimeout(),
             httpProfile.getWriteTimeout());
     }
 
-    protected <T extends AbstractResponse<?>> T call(String action, AbstractRequest request, Class<T> responseClass) {
+    protected <T extends AbstractResponse<?>> T postCall(String action, AbstractRequest request, Class<T> responseClass) {
         try {
             String timestamp = String.valueOf(Instant.now().getEpochSecond());
             String payload = request.toJson();
-            String stringToSign = "POST\\n" + action + "\\n" + timestamp + "\\n" + payload;
+            String stringToSign = timestamp + "\\n" + payload;
             String signature = Sign.sign(stringToSign, credential.getSecretKey());
 
             Headers.Builder headerBuilder = new Headers.Builder()

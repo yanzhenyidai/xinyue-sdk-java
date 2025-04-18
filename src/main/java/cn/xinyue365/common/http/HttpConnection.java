@@ -7,14 +7,14 @@ import org.apache.log4j.Logger;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class HttpUtil {
+public class HttpConnection {
 
-    private static final Logger logger = Logger.getLogger(HttpUtil.class);
+    private static final Logger logger = Logger.getLogger(HttpConnection.class);
 
     private static final OkHttpClient clientSingleton = new OkHttpClient();
     private final OkHttpClient client;
 
-    public HttpUtil(Integer connTimeout, Integer readTimeout, Integer writeTimeout) {
+    public HttpConnection(Integer connTimeout, Integer readTimeout, Integer writeTimeout) {
         this.client = clientSingleton.newBuilder()
             .connectTimeout(connTimeout, TimeUnit.SECONDS)
             .readTimeout(readTimeout, TimeUnit.SECONDS)

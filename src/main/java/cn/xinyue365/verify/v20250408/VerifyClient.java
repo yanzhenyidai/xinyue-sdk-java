@@ -16,6 +16,6 @@ public class VerifyClient extends AbstractClient {
     }
 
     public VerifyResponse verify(VerifyRequest request) {
-        return this.call("/verify/v1", request, VerifyResponse.class);
+        return this.postCall("/verify/v1", request, VerifyResponse.class);
     }
 }
