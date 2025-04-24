@@ -17,19 +17,20 @@ import lombok.EqualsAndHashCode;
 public class InvoiceRequest extends AbstractRequest {
 
     /**
-     * 请求类型：1、在线文件，2、Base64文件
+     * 文件名
      */
-    private String type;
+    private String name;
 
     /**
-     * 文件格式
+     * base64文件
      */
-    private String fileStyle;
+    private String base64Info;
 
     /**
-     * 文件信息
+     * URL地址文件
      */
-    private String fileInfo;
+    private String urlInfo;
+
 
     public String toJson() {
         return new Gson().toJson(this);

@@ -37,7 +37,7 @@ public abstract class AbstractClient {
         try {
             String timestamp = String.valueOf(Instant.now().getEpochSecond());
             String payload = request.toJson();
-            String stringToSign = timestamp + "\\n" + payload;
+            String stringToSign = action + "\\n" + timestamp;
             String signature = Sign.sign(stringToSign, credential.getSecretKey());
 
             Headers.Builder headerBuilder = new Headers.Builder()
