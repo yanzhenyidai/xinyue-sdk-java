@@ -112,4 +112,21 @@ public class HttpConnection {
 
         return this.doRequest(request);
     }
+
+    public String postRequest(String url, RequestBody body, Headers headers)
+        throws SDKException, IOException {
+        Request request;
+        try {
+            request =
+                new Request.Builder()
+                    .url(url)
+                    .post(body)
+                    .headers(headers)
+                    .build();
+        } catch (IllegalArgumentException e) {
+            throw new SDKException(e.getClass().getName() + "-" + e.getMessage());
+        }
+
+        return this.doRequest(request);
+    }
 }

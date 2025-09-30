@@ -18,10 +18,10 @@ public class OcrClient extends AbstractClient {
     }
 
     public InvoiceResponse ocr(InvoiceRequest request) {
-        return this.postCall("/ocr/doInvoice", request, InvoiceResponse.class);
+        return this.postCall("/ocr/doInvoiceWithForm", request, InvoiceResponse.class);
     }
 
     public TextResponse ocr(TextRequest request) {
-        return this.postCall("/ocr/doText", request, TextResponse.class);
+        return this.postCallWithForm("/ocr/doTextWithForm", request, TextResponse.class);
     }
 }

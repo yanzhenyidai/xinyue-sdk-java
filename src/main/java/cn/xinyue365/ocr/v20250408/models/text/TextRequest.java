@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.io.InputStream;
+import java.io.File;
 import java.util.List;
 
 /**
@@ -21,6 +21,11 @@ public class TextRequest extends AbstractRequest {
      * 文件名
      */
     private String name;
+
+    /**
+     * file文件
+     */
+    private File file;
 
     /**
      * base64文件
