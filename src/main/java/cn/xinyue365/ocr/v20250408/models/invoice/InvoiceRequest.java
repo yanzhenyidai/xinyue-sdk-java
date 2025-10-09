@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.File;
+
 /**
  * 发票识别
  *
@@ -20,6 +22,11 @@ public class InvoiceRequest extends AbstractRequest {
      * 文件名
      */
     private String name;
+
+    /**
+     * file文件
+     */
+    private File file;
 
     /**
      * base64文件
