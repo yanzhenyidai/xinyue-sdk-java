@@ -1,15 +1,7 @@
 # xinyue-sdk-java
-对外提供的SDK接口
+对外提供的SDK接口，当前latest-version为 **1.0.8**，endPoint地址为 **http://82.157.150.37:16081**
 
 ---
-
-## 接口清单
-
-1. 文件识别 cn.xinyue365.ocr.v20250408.OcrClient.ocr(cn.xinyue365.ocr.v20250408.models.text.TextRequest)
-2. 发票识别 cn.xinyue365.ocr.v20250408.OcrClient.ocr(cn.xinyue365.ocr.v20250408.models.invoice.InvoiceRequest)
-3. 发票验真 cn.xinyue365.verify.v20250408.VerifyClient.verify
-
---- 
 
 ## 接口调用
 
@@ -23,8 +15,13 @@
 </dependency>
 ```
 
-接口调用比较通用，下面是文件识别的代码
+---
 
+## 接口清单
+
+> 1. 文件识别 cn.xinyue365.ocr.v20250408.OcrClient.ocr(cn.xinyue365.ocr.v20250408.models.text.TextRequest)
+
+文件识别示例代码
 ```java
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
@@ -44,5 +41,47 @@
         TextResponse textResponse = client.ocr(build);
         System.out.println(System.currentTimeMillis() - start + ":ms");
         System.out.println(new Gson().toJson(textResponse));
+    }
+```
+
+> 2. 发票识别 cn.xinyue365.ocr.v20250408.OcrClient.ocr(cn.xinyue365.ocr.v20250408.models.invoice.InvoiceRequest)
+
+发票识别示例代码
+```java
+
+    public static void main(String[] args) {
+        long start = System.currentTimeMillis();
+        HttpProfile httpProfile = new HttpProfile();
+        OcrClient client = new OcrClient(new Credential("secreId", "secreKey"), httpProfile, "endPoint地址");
+
+        InvoiceRequest build = InvoiceRequest.builder()
+            .file(new File("C:\\Users\\TanZhen\\Desktop\\GX-FPC-25-0255_0003.jpg")) // 填写文件路径
+            .name("GX-FPC-25-0255_0003.jpg")  // 文件名称
+            .build();
+        InvoiceResponse ocr = client.ocr(build);
+
+        System.out.println(new Gson().toJson(ocr));
+    }
+}
+```
+
+3. 发票验真 cn.xinyue365.verify.v20250408.VerifyClient.verify
+
+发票验真示例代码
+```java
+    public static void main(String[] args) {
+        HttpProfile httpProfile = new HttpProfile();
+        VerifyClient client = new VerifyClient(new Credential("secreId", "secreKey"), httpProfile, "endPoint地址");
+
+        VerifyRequest build = VerifyRequest.builder()
+            .invoiceCode("")  // 发票代码
+            .invoiceNum("")  // 发票号码
+            .invoiceDate("2025-05-23") // 发票日期 yyyy-MM-dd
+            .amountTotal("47.17")  // 税前金额
+            .tax("2.83") // 税额
+            .taxAmount("50") // 价税合计
+            .build();
+        VerifyResponse ocr = client.verify(build);
+        System.out.println(new Gson().toJson(ocr));
     }
 ```
