@@ -4,8 +4,6 @@ package cn.xinyue365.ocr.v20250408.models.invoice.enums;
  * 发票类型枚举
  *
  * @author frank
- * @version 1.0
- * @date 2024-04-23 16:04
  */
 public enum InvoiceTypeEnum {
 
