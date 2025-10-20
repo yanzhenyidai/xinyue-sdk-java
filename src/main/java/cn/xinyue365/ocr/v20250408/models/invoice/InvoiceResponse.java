@@ -13,12 +13,19 @@ import java.util.List;
  * @author frank
  */
 @Builder
-public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>> {
+public class InvoiceResponse extends AbstractResponse<InvoiceResponse.Data> {
+
+    @Getter
+    @Setter
+    public static class Data implements Serializable {
+        private int count;
+        private List<InvoiceData> invoiceList;
+    }
 
     @Setter
     @Getter
     @Builder
-    public static class Data implements Serializable {
+    public static class InvoiceData implements Serializable {
         private String index;
         private String type;
         private List<String> region = new ArrayList<>();
@@ -346,6 +353,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
         private String currencyCode;
     }
 
+    // 发票明细
     @Setter
     @Getter
     @Builder
@@ -369,6 +377,7 @@ public class InvoiceResponse extends AbstractResponse<List<InvoiceResponse.Data>
 
     }
 
+    // 机票明细
     @Setter
     @Getter
     @Builder
