@@ -13,11 +13,10 @@ public enum InvoiceTypeEnum {
     SPECIAL_INVOICE("专用发票", "10100"),
     ELECTRONIC_SPECIAL_INVOICE("电子专用发票", "10100a"),
     DIGITAL_ELECTRONIC_SPECIAL_INVOICE("数电专用发票", "10107"),
-    GENERAL_INVOICE("通用发票", "10101"),
+    GENERAL_INVOICE("通用发票", "10101a"),
     TRAIN_TICKET("火车票", "10503"),
     QUOTA_INVOICE("定额发票", "10200"),
-    MOTOR_VEHICLE_INVOICE("机动车发票", "10104"),
-    MOTOR_VEHICLE_SALES_UNIFORM_INVOICE("机动车销售统一发票", "10104"),
+    MOTOR_VEHICLE_INVOICE("机动车销售统一发票", "10104"),
     AIR_TICKET_ITINERARY("机票行程单", "10506"),
     ROLL_INVOICE("卷票", "10103"),
     TAX_PAYMENT_CERTIFICATE("税收完税证明", "10902"),
@@ -26,15 +25,13 @@ public enum InvoiceTypeEnum {
     PASSENGER_TRANSPORT_TICKET("客运车船票", "10505a"),
     TAXI_RECEIPT("出租车票", "10500"),
     MACHINE_PRINTED_INVOICE("机打发票", "10400"),
-    GENERAL_MACHINE_PRINTED_INVOICE("通用机打发票", "10400"),
-    NON_TAX_INVOICE("非税收发票", "10900"),
-    NON_TAX_INCOME_RECEIPT("非税收入票据", "10900");
-
-    private final String code;
+    OTHER_INVOICE("其他发票", "10900");
 
     private final String value;
 
-    InvoiceTypeEnum(String code, String value) {
+    private final String code;
+
+    InvoiceTypeEnum(String value, String code) {
         this.code = code;
         this.value = value;
     }

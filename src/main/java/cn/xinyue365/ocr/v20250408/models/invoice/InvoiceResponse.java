@@ -88,6 +88,9 @@ public class InvoiceResponse extends AbstractResponse<InvoiceResponse.Data> {
 
         @MetaInfo(name = "船票")
         private ShipInvoice shipInvoice;
+
+        @MetaInfo(name = "其他发票")
+        private OtherInvoice otherInvoice;
     }
 
     @Setter
@@ -794,6 +797,25 @@ public class InvoiceResponse extends AbstractResponse<InvoiceResponse.Data> {
 
         @MetaInfo(name = "币种")
         private String currencyCode;
+    }
+
+    @Setter
+    @Getter
+    @Builder
+    @MetaInfo(name = "其他发票")
+    public static class OtherInvoice implements Serializable {
+
+        @MetaInfo(name = "开票日期")
+        private String date;
+
+        @MetaInfo(name = "发票代码")
+        private String code;
+
+        @MetaInfo(name = "发票号码")
+        private String number;
+
+        @MetaInfo(name = "合计金额")
+        private String total;
     }
 
     @Setter
