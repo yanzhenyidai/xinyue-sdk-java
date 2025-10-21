@@ -27,11 +27,11 @@ public enum InvoiceTypeEnum {
     MACHINE_PRINTED_INVOICE("机打发票", "10400"),
     OTHER_INVOICE("其他发票", "10900");
 
-    private final String value;
-
     private final String code;
 
-    InvoiceTypeEnum(String value, String code) {
+    private final String value;
+
+    InvoiceTypeEnum(String code, String value) {
         this.code = code;
         this.value = value;
     }
