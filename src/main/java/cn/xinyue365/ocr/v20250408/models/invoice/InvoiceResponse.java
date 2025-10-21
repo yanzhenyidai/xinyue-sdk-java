@@ -38,13 +38,13 @@ public class InvoiceResponse extends AbstractResponse<InvoiceResponse.Data> {
         @MetaInfo(name = "序号")
         private String index;
 
-        @MetaInfo(name = "发票类型", remark = "cn/xinyue365/ocr/v20250408/models/invoice/enums/InvoiceTypeEnum.java")
+        @MetaInfo(name = "发票类型", remark = "大类信息可以参考：cn/xinyue365/ocr/v20250408/models/invoice/enums/InvoiceTypeEnum.java")
         private String type;
 
         @MetaInfo(name = "发票区域")
         private List<String> region = new ArrayList<>();
 
-        @MetaInfo(name = "增值税发票信息")
+        @MetaInfo(name = "增值税发票信息", remark = "包括：电子普通发票、数电普通发票、普通发票、专用发票、电子专用发票、数电专用发票、通用发票")
         private VatInvoice vatInvoice;
 
         @MetaInfo(name = "机票发票信息")
@@ -93,7 +93,7 @@ public class InvoiceResponse extends AbstractResponse<InvoiceResponse.Data> {
     @Setter
     @Getter
     @Builder
-    @MetaInfo(name = "增值税发票信息")
+    @MetaInfo(name = "增值税发票信息", remark = "包括：电子普通发票、数电普通发票、普通发票、专用发票、电子专用发票、数电专用发票、通用发票")
     public static class VatInvoice implements Serializable {
 
         @MetaInfo(name = "发票代码")

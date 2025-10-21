@@ -55,4 +55,13 @@ public enum InvoiceTypeEnum {
         }
         return null;
     }
+
+    public static String getCodeByValue(String value) {
+        for (InvoiceTypeEnum invoiceTypeEnum : InvoiceTypeEnum.values()) {
+            if (invoiceTypeEnum.getValue().equals(value)) {
+                return invoiceTypeEnum.getCode();
+            }
+        }
+        return null;
+    }
 }
