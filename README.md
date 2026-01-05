@@ -65,7 +65,7 @@
 }
 ```
 
-3. 发票验真 cn.xinyue365.verify.v20250408.VerifyClient.verify
+3. 发票验真(旧) cn.xinyue365.verify.v20250408.VerifyClient.verify
 
 发票验真示例代码
 ```java
@@ -80,6 +80,26 @@
             .amountTotal("47.17")  // 税前金额
             .tax("2.83") // 税额
             .taxAmount("50") // 价税合计
+            .build();
+        VerifyResponse ocr = client.verify(build);
+        System.out.println(new Gson().toJson(ocr));
+    }
+```
+
+4. 发票验真(新) cn.xinyue365.verify.v20260105.VerifyClient.verify ***推荐使用***
+
+发票验真示例代码
+```java
+    public static void main(String[] args) {
+        HttpProfile httpProfile = new HttpProfile();
+        VerifyClient client = new VerifyClient(new Credential("secreId", "secreKey"), httpProfile, "endPoint地址");
+
+        VerifyRequest build = VerifyRequest.builder()
+            .fpdm("") // 发票代码
+            .fphm("")   // 发票号码
+            .kprq("2025-02-12") // 发票日期 yyyy-MM-dd
+            .je("48055.32")  // 价税合计
+            .jym("") // 校验码
             .build();
         VerifyResponse ocr = client.verify(build);
         System.out.println(new Gson().toJson(ocr));
