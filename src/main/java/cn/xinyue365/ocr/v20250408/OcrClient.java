@@ -28,4 +28,8 @@ public class OcrClient extends AbstractClient {
     public TextResponse ocrWriting(TextRequest request) {
         return this.postCallWithForm("/ocr/doWritingTextWithForm", request, TextResponse.class);
     }
+
+    public TextResponse ocrWritingV1(TextRequest request) {
+        return this.postCallWithForm("/ocr/doWritingTextWithForm/v1", request, TextResponse.class);
+    }
 }
