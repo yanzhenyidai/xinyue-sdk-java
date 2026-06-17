@@ -345,6 +345,10 @@ public class InvoiceResponse extends AbstractResponse<InvoiceResponse.Data> {
 
         @MetaInfo(name = "公司章")
         private String companySeal;
+
+        @MetaInfo(name = "明细")
+        private List<Item> items = new ArrayList<>();
+
     }
 
     @Setter
